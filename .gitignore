@@ -1,0 +1,19 @@
+# Fichiers de configuration
+.env
+
+# Fichiers d'aide
+help.txt
+git.txt
+
+# Environnements virtuels
+.venv/
+
+# Scripts Python spécifiques
+pipeline/extract.py
+
+# Dossiers d'IPython Notebooks (checkpoints)
+.ipynb_checkpoints/
+
+# Fichiers et répertoires Airflow
+airflow/*
+!airflow/dags/

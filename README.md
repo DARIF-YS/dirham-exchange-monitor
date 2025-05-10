@@ -3,8 +3,6 @@
 **DirhamWatch** est un projet de scraping, transformation et visualisation des taux de change du dirham marocain (MAD) face aux principales devises étrangères.  
 Les données sont extraites quotidiennement depuis le site officiel de [Bank Al-Maghrib](https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers).
 
----
-
 ## 🎯 Objectif du projet
 
 Créer une pipeline **ETL automatisée** pour :
@@ -43,7 +41,6 @@ CREATE TABLE clean_taux_change (
 );
 ```
 
----
 
 ## 📊 Visualisation
 
@@ -57,14 +54,12 @@ Connexion de la base PostgreSQL (via **Aiven Cloud**) à **Looker Studio** pour 
 - Écart Achat/Vente – Suivi Temporel  
 - Heatmap des fluctuations hebdomadaires  
 
----
 
 ## 🔗 Exemple d’URL utilisée pour le scraping
 
 ```bash
 https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers?date=06%2F05%2F2025&block=98a86bd3205c8223897bbd8d87e3788d
 ```
----
 
 ## ⚙️ Technologies utilisées
 
@@ -75,7 +70,6 @@ https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-c
 - **Looker Studio** – pour la visualisation des données  
 - **Aiven Cloud** – base de données PostgreSQL managée
 
----
 
 ## 🚀 Exécution de la pipeline
 
@@ -93,5 +87,6 @@ https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-c
 
 3. **Activer le DAG `etl_dag` dans l'interface Airflow**.
 
----
-# dirham-exchange-monitor
+## 📫 Contact
+
+For any questions, please contact me via [GitHub Issues](https://github.com/DARIF-YS) or reach out to me on LinkedIn.
