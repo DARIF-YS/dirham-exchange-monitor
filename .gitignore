@@ -17,3 +17,5 @@ pipeline/extract.py
 # Fichiers et répertoires Airflow
 airflow/*
 !airflow/dags/
+
+__pycache__
