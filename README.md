@@ -1,5 +1,10 @@
 # 💱 DirhamWatch – Suivi des cours de change
 
+<video width="100%" height="80" controls>
+  <source src="assets/intro.mkv" type="video/mkv">
+  Into Video
+</video>
+
 **DirhamWatch** est un projet de scraping, transformation et visualisation des taux de change du dirham marocain (MAD) face aux principales devises étrangères sur une periode de d'une annee.  
 Les données sont extraites quotidiennement depuis le site officiel de [Bank Al-Maghrib](https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers).
 

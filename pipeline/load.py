@@ -21,7 +21,10 @@ def Load():
     engine = create_engine(DATABASE_URL)
 
     # Charger les données depuis le fichier JSON nettoyé
-    df = pd.read_json("../exchange_data/clean_taux_change.json")
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    path_clean  = os.path.join(current_dir, '..', 'exchange_data', 'clean_taux_change.json')
+
+    df = pd.read_json(path_clean)
 
     # Arrondir les valeurs numériques
     df = df.round(6)

@@ -1,8 +1,13 @@
 import pandas as pd
+import os
 
 def Transform():
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    path_raw    = os.path.join(current_dir, '..', 'exchange_data', 'raw_taux_change.json')
+    path_clean  = os.path.join(current_dir, '..', 'exchange_data', 'clean_taux_change.json')
+
     # Charger les données brutes depuis un fichier JSON
-    df = pd.read_json("../exchange_data/raw_taux_change.json") 
+    df = pd.read_json(path_raw) 
 
     # Conversion des taux (string avec virgules) en float
     df['taux_achat'] = df['taux_achat'].str.replace(',', '.').astype(float)
@@ -65,4 +70,4 @@ def Transform():
     df_combined = df_combined[['id', 'date', 'nom_devise', 'abr_devise', 'taux_achat', 'taux_vente', 'ecart', 'taux_moyen']]
 
     # Sauvegarde des données nettoyées dans un fichier JSON
-    df_combined.to_json("../exchange_data/clean_taux_change.json", orient="records", force_ascii=False, indent=2)
+    df_combined.to_json(path_clean, orient="records", force_ascii=False, indent=2)
