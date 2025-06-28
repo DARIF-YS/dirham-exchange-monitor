@@ -1,21 +1,21 @@
-# 💱 DirhamWatch – Suivi des cours de change:
+# DirhamWatch – Suivi des cours de change:
 
 https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157
 
 **DirhamWatch** est un projet de scraping, transformation et visualisation des taux de change du dirham marocain (MAD) face aux principales devises étrangères sur une periode de d'une annee.  
 Les données sont extraites quotidiennement depuis le site officiel de [Bank Al-Maghrib](https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers).
 
-## 🎯 Objectif du projet
+## 1. Objectif du projet
 
 Créer une pipeline **ETL automatisée** pour :
 
-### 📥 Extraction
+### a. Extraction
 
 - Scraping quotidien des taux de change depuis Bank Al-Maghrib :
   - **Données extraites** : `Monnaie`, `Date`, `Taux d’achat`, `Taux de vente`
   - **Fichier de sauvegarde brut** : `raw_taux_change.csv`
 
-### 🔄 Transformation
+### b. Transformation
 
 - Nettoyage et enrichissement avec **Pandas** :
   - Interpolation des valeurs manquantes
@@ -27,7 +27,7 @@ Créer une pipeline **ETL automatisée** pour :
     - `Écart = Taux_vente - Taux_achat`
   - **Fichier de sauvegarde clean** : `clean_taux_change.csv`
 
-### 🧱 Chargement
+### c. Chargement
 
 - Stockage des données propres dans une base **PostgreSQL** :
 
@@ -44,7 +44,7 @@ CREATE TABLE clean_taux_change (
 ```
 
 
-## 📊 Visualisation
+## 2. Visualisation
 
 Connexion de la base PostgreSQL (via **Aiven Cloud**) à **Looker Studio** pour :
 
@@ -57,13 +57,13 @@ Connexion de la base PostgreSQL (via **Aiven Cloud**) à **Looker Studio** pour 
 - Heatmap des fluctuations hebdomadaires  
 
 
-## 🔗 Exemple d’URL utilisée pour le scraping
+## 3. Exemple d’URL utilisée pour le scraping
 
 ```bash
 https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers?date=06%2F05%2F2025&block=98a86bd3205c8223897bbd8d87e3788d
 ```
 
-## ⚙️ Technologies utilisées
+## 4. Technologies utilisées
 
 - **Python** – pour l’automatisation, le traitement et le scraping  
 - **Pandas** – pour la transformation des données  
@@ -73,22 +73,22 @@ https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-c
 - **Aiven Cloud** – base de données PostgreSQL managée
 
 
-## 🚀 Exécution de la pipeline
+## 5. Exécution de la pipeline
 
-1. **Installer les dépendances** :
+a. **Installer les dépendances** :
    ```bash
    pip install -r requirements.txt
    ```
 
-2. **Lancer Airflow** :
+b. **Lancer Airflow** :
    ```bash
    airflow db init
    airflow webserver --port 8080
    airflow scheduler
    ```
 
-3. **Activer le DAG `etl_dag` dans l'interface Airflow**.
+c. **Activer le DAG `etl_dag` dans l'interface Airflow**.
 
-## 📫 Contact
+───────────────
 
-For any questions, please contact me via [GitHub Issues](https://github.com/DARIF-YS) or reach out to me on LinkedIn.
+**Author:** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
