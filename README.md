@@ -1,35 +1,38 @@
-# DirhamWatch – Suivi des cours de change:
+# DirhamWatch – Suivi des cours de change
 
-https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157
+## Schéma de la pipeline
 
-**DirhamWatch** est un projet de scraping, transformation et visualisation des taux de change du dirham marocain (MAD) face aux principales devises étrangères sur une periode de d'une annee.  
+![Workflow DirhamWatch](https://github.com/user-attachments/assets/b6a9d926-8bcd-4bca-aa0f-50654fe73748)
+
+## Vidéo de démonstration
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+
+**DirhamWatch** est un projet de scraping, transformation et visualisation des taux de change du dirham marocain (MAD) face aux principales devises étrangères, sur une période d'une année.  
 Les données sont extraites quotidiennement depuis le site officiel de [Bank Al-Maghrib](https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers).
 
 ## 1. Objectif du projet
 
-Créer une pipeline **ETL automatisée** pour :
+Créer une pipeline ETL automatisée pour :
 
 ### a. Extraction
 
-- Scraping quotidien des taux de change depuis Bank Al-Maghrib :
-  - **Données extraites** : `Monnaie`, `Date`, `Taux d’achat`, `Taux de vente`
-  - **Fichier de sauvegarde brut** : `raw_taux_change.csv`
+- Scraping quotidien depuis Bank Al-Maghrib
+- Données extraites : `Monnaie`, `Date`, `Taux d’achat`, `Taux de vente`
+- Fichier brut : `raw_taux_change.csv`
 
-### b. Transformation
+### b. Transformation (Pandas)
 
-- Nettoyage et enrichissement avec **Pandas** :
-  - Interpolation des valeurs manquantes
-  - Normalisation des noms de devises
-  - Conversion des dates au format `mm/dd/yyyy`
-  - Casting des taux et nettoyage des chaînes de texte
-  - Calcul de :
-    - `Taux_moyen = (Taux_achat + Taux_vente) / 2`
-    - `Écart = Taux_vente - Taux_achat`
-  - **Fichier de sauvegarde clean** : `clean_taux_change.csv`
+- Interpolation des valeurs manquantes
+- Normalisation des noms de devises
+- Conversion des dates au format `mm/dd/yyyy`
+- Casting des taux
+- Calcul :
+  - `Taux_moyen = (Taux_achat + Taux_vente) / 2`
+  - `Écart = Taux_vente - Taux_achat`
+- Fichier transformé : `clean_taux_change.csv`
 
-### c. Chargement
-
-- Stockage des données propres dans une base **PostgreSQL** :
+### c. Chargement (PostgreSQL)
 
 ```sql
 CREATE TABLE clean_taux_change (
@@ -43,21 +46,18 @@ CREATE TABLE clean_taux_change (
 );
 ```
 
-
 ## 2. Visualisation
 
-Connexion de la base PostgreSQL (via **Aiven Cloud**) à **Looker Studio** pour :
+Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio pour :
 
-- Comparaison des Taux de Change par Devise : Vente, Achat et Moyen  
-- Répartition des Taux : Vente vs. Achat avec Écart Dynamique  
-- Évolution du Taux de Vente dans le Temps  
-- Évolution du Taux d’Achat dans le Temps  
-- Variation du Taux Moyen de Change  
-- Écart Achat/Vente – Suivi Temporel  
-- Heatmap des fluctuations hebdomadaires  
+- Comparaison des taux par devise (vente, achat, moyen)
+- Répartition des taux avec écart dynamique
+- Évolution temporelle des taux d’achat et de vente
+- Variation du taux moyen de change
+- Écart achat/vente dans le temps
+- Heatmap des fluctuations hebdomadaires
 
-
-## 3. Exemple d’URL utilisée pour le scraping
+## 3. Exemple d’URL utilisée
 
 ```bash
 https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers?date=06%2F05%2F2025&block=98a86bd3205c8223897bbd8d87e3788d
@@ -65,30 +65,33 @@ https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-c
 
 ## 4. Technologies utilisées
 
-- **Python** – pour l’automatisation, le traitement et le scraping  
-- **Pandas** – pour la transformation des données  
-- **Airflow** – pour l’orchestration de la pipeline  
-- **PostgreSQL** – pour le stockage des données  
-- **Looker Studio** – pour la visualisation des données  
-- **Aiven Cloud** – base de données PostgreSQL managée
-
+- Python
+- Pandas
+- Airflow
+- PostgreSQL
+- Looker Studio
+- Aiven Cloud
 
 ## 5. Exécution de la pipeline
 
-a. **Installer les dépendances** :
-   ```bash
-   pip install -r requirements.txt
-   ```
+### a. Installation des dépendances
 
-b. **Lancer Airflow** :
-   ```bash
-   airflow db init
-   airflow webserver --port 8080
-   airflow scheduler
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-c. **Activer le DAG `etl_dag` dans l'interface Airflow**.
+### b. Lancement d’Airflow
 
-───────────────
+```bash
+airflow db init
+airflow webserver --port 8080
+airflow scheduler
+```
 
-**Author:** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
+### c. Activation du DAG
+
+Via l’interface Airflow : `etl_dag`
+
+---
+
+**Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
