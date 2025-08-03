@@ -1,27 +1,27 @@
-# DirhamWatch – Suivi des cours de change
+## DirhamWatch – Suivi des cours de change
 
-## Schéma de la pipeline
+### Schéma de la pipeline
 
 ![Workflow DirhamWatch](https://github.com/user-attachments/assets/b6a9d926-8bcd-4bca-aa0f-50654fe73748)
 
-## Vidéo de démonstration
+### Vidéo de démonstration
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157
 
 **DirhamWatch** est un projet de scraping, transformation et visualisation des taux de change du dirham marocain (MAD) face aux principales devises étrangères, sur une période d'une année.  
 Les données sont extraites quotidiennement depuis le site officiel de [Bank Al-Maghrib](https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers).
 
-## 1. Objectif du projet
+### 1. Objectif du projet
 
 Créer une pipeline ETL automatisée pour :
 
-### a. Extraction
+#### a. Extraction
 
 - Scraping quotidien depuis Bank Al-Maghrib
 - Données extraites : `Monnaie`, `Date`, `Taux d’achat`, `Taux de vente`
 - Fichier brut : `raw_taux_change.csv`
 
-### b. Transformation (Pandas)
+#### b. Transformation (Pandas)
 
 - Interpolation des valeurs manquantes
 - Normalisation des noms de devises
@@ -32,7 +32,7 @@ Créer une pipeline ETL automatisée pour :
   - `Écart = Taux_vente - Taux_achat`
 - Fichier transformé : `clean_taux_change.csv`
 
-### c. Chargement (PostgreSQL)
+#### c. Chargement (PostgreSQL)
 
 ```sql
 CREATE TABLE clean_taux_change (
@@ -46,7 +46,7 @@ CREATE TABLE clean_taux_change (
 );
 ```
 
-## 2. Visualisation
+### 2. Visualisation
 
 Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio pour :
 
@@ -57,13 +57,13 @@ Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio po
 - Écart achat/vente dans le temps
 - Heatmap des fluctuations hebdomadaires
 
-## 3. Exemple d’URL utilisée
+### 3. Exemple d’URL utilisée
 
 ```bash
 https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-change/Cours-des-billets-de-banque-etrangers?date=06%2F05%2F2025&block=98a86bd3205c8223897bbd8d87e3788d
 ```
 
-## 4. Technologies utilisées
+### 4. Technologies utilisées
 
 - Python
 - Pandas
@@ -72,15 +72,15 @@ https://www.bkam.ma/Marches/Principaux-indicateurs/Marche-des-changes/Cours-de-c
 - Looker Studio
 - Aiven Cloud
 
-## 5. Exécution de la pipeline
+### 5. Exécution de la pipeline
 
-### a. Installation des dépendances
+#### a. Installation des dépendances
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### b. Lancement d’Airflow
+#### b. Lancement d’Airflow
 
 ```bash
 airflow db init
@@ -88,10 +88,11 @@ airflow webserver --port 8080
 airflow scheduler
 ```
 
-### c. Activation du DAG
+#### c. Activation du DAG
 
 Via l’interface Airflow : `etl_dag`
 
 ---
 
 **Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
+
