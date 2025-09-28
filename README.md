@@ -9,8 +9,13 @@ Les données sont collectées quotidiennement depuis [Bank Al-Maghrib](https://w
 - **Transformation** : interpolation, normalisation, calcul du taux moyen et de l’écart  
 - **Chargement** : stockage dans PostgreSQL (`clean_taux_change`)  
 
-<!-- Image avec bordure et taille contrôlée -->
-<img src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" alt="workflow_etl" style="border:2px solid #000; width:700px; height:470px;">
+<table>
+  <tr>
+    <td style="border:2px solid #000; padding: 2px;">
+      <img src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" alt="workflow_etl" width="714">
+    </td>
+  </tr>
+</table>
 
 ## Visualisation
 
