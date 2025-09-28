@@ -9,7 +9,7 @@ Les données sont collectées quotidiennement depuis [Bank Al-Maghrib](https://w
 - **Transformation** : interpolation, normalisation, calcul du taux moyen et de l’écart  
 - **Chargement** : stockage dans PostgreSQL (`clean_taux_change`)  
 
-<img width="714" alt="workflow_etl" src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" />
+<img  alt="workflow_etl" src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" />
 
 ## Visualisation
 
@@ -29,3 +29,4 @@ Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio po
 Python | Pandas | Airflow | PostgreSQL | Looker Studio | Aiven Cloud  
 
 **Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
+
