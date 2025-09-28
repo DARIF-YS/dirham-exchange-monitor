@@ -3,6 +3,7 @@
 ### Schéma de la pipeline
 
 ![Workflow DirhamWatch](https://github.com/user-attachments/assets/b6a9d926-8bcd-4bca-aa0f-50654fe73748)
+<img width="714" height="477" alt="dirhamwatch_workflow" src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" />
 
 ### Vidéo de démonstration
 
@@ -95,4 +96,5 @@ Via l’interface Airflow : `etl_dag`
 ---
 
 **Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
+
 
