@@ -9,13 +9,7 @@ Les données sont collectées quotidiennement depuis [Bank Al-Maghrib](https://w
 - **Transformation** : interpolation, normalisation, calcul du taux moyen et de l’écart  
 - **Chargement** : stockage dans PostgreSQL (`clean_taux_change`)  
 
-<table>
-  <tr>
-    <td style="border:2px solid #000; padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" alt="workflow_etl" width="760">
-    </td>
-  </tr>
-</table>
+<img width="714" alt="workflow_etl" src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" />
 
 ## Visualisation
 
@@ -28,19 +22,10 @@ Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio po
 - Écart achat/vente dans le temps  
 - Heatmap des fluctuations hebdomadaires  
 
-<table>
-  <tr>
-    <td style="border:2px solid #000; padding: 2px;">
-      [🎥 Voir la vidéo de démonstration](https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157)
-    </td>
-  </tr>
-</table>
+[🎥 Voir la vidéo de démonstration](https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157)
 
 ## Technologies
 
 Python | Pandas | Airflow | PostgreSQL | Looker Studio | Aiven Cloud  
 
 **Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
-
-
-
