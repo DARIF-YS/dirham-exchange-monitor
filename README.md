@@ -28,12 +28,19 @@ Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio po
 - Écart achat/vente dans le temps  
 - Heatmap des fluctuations hebdomadaires  
 
-[🎥 Voir la vidéo de démonstration](https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157)
+<table>
+  <tr>
+    <td style="border:2px solid #000; padding: 2px;">
+      [🎥 Voir la vidéo de démonstration](https://github.com/user-attachments/assets/e90c35ab-4298-4cbf-808a-fbda0b0fc157)
+    </td>
+  </tr>
+</table>
 
 ## Technologies
 
 Python | Pandas | Airflow | PostgreSQL | Looker Studio | Aiven Cloud  
 
 **Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
+
 
 
