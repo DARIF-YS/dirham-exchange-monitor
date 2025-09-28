@@ -12,7 +12,7 @@ Les données sont collectées quotidiennement depuis [Bank Al-Maghrib](https://w
 <table>
   <tr>
     <td style="border:2px solid #000; padding: 2px;">
-      <img src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" alt="workflow_etl" width="714">
+      <img src="https://github.com/user-attachments/assets/a3671f7e-329a-4a94-9ff9-91a316c49e8d" alt="workflow_etl" heigth="714">
     </td>
   </tr>
 </table>
@@ -35,3 +35,4 @@ Connexion de la base PostgreSQL (hébergée via Aiven Cloud) à Looker Studio po
 Python | Pandas | Airflow | PostgreSQL | Looker Studio | Aiven Cloud  
 
 **Auteur :** [Yassine Darif](https://www.linkedin.com/in/darif-yassine)
+
